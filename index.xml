@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello World! on Mayank Anand</title>
-    <link>https://github.com/mayankanand111/Mayank_Portfolio/</link>
+    <link>https://mayankanand111.github.io/Mayank_Portfolio/</link>
     <description>Recent content in Hello World! on Mayank Anand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://github.com/mayankanand111/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</title>
-      <link>https://github.com/mayankanand111/Mayank_Portfolio/post/chapter-1/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/chapter-1/</link>
       <pubDate>Thu, 17 Aug 2023 10:58:08 -0400</pubDate>
       
-      <guid>https://github.com/mayankanand111/Mayank_Portfolio/post/chapter-1/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/chapter-1/</guid>
       <description>Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://github.com/mayankanand111/Mayank_Portfolio/about/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/mayankanand111/Mayank_Portfolio/about/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/about/</guid>
       <description>At Big Pocono State Park, pennsylvania, USA My journey began in the backyard of my parent’s house as a curious 12-year-old kid conducting science experiments. This fascination grew when I presented my &amp;lsquo;Laminar Flow&amp;rsquo; project to former President of India Dr. A.P.J. Abdul Kalam Azad. His words to me became engraved in my mind: ‘Kid, science will give you wings to explore the world.’ This passion introduced me to the exciting domain of programming languages during my high school years, but that inquisitive nature to experiment has only grown over time.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://github.com/mayankanand111/Mayank_Portfolio/contact/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/mayankanand111/Mayank_Portfolio/contact/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/contact/</guid>
       <description>Connect with me on:
 LinkedIn GitHub Email </description>
     </item>
