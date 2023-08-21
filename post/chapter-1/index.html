@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://github.com/mayankanand111/Mayank_Portfolio/css/custom.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off | Mayank Anand</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks.">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://github.com/mayankanand111/Mayank_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off" />
+<meta property="og:description" content="Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/mayankanand111/Mayank_Portfolio/post/chapter-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-17T10:58:08-04:00" />
+<meta property="article:modified_time" content="2023-08-17T10:58:08-04:00" />
+<meta itemprop="name" content="ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off">
+<meta itemprop="description" content="Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks."><meta itemprop="datePublished" content="2023-08-17T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2023-08-17T10:58:08-04:00" />
+<meta itemprop="wordCount" content="3915">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off"/>
+<meta name="twitter:description" content="Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://github.com/mayankanand111/Mayank_Portfolio/images/segmented_image.png');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://github.com/mayankanand111/Mayank_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Mayank Anand
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://github.com/mayankanand111/Mayank_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://github.com/mayankanand111/Mayank_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://github.com/mayankanand111/Mayank_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    
+    <a href="https://www.linkedin.com/in/mayank-anand-6580209a/" target="_blank" rel="noopener" class="linkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="linkedIn link" aria-label="follow on linkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="https://github.com/mayankanand111" target="_blank" rel="noopener" class="GitHub ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="mailto:mayank.anand@dal.ca" target="_blank" rel="noopener" class="mayank.anand@dal.ca ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="mayank.anand@dal.ca link" aria-label="follow on mayank.anand@dal.ca——Opens in a new window">
+      
+        mayank.anand@dal.ca
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</div>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+  <link rel="stylesheet" href="https://github.com/mayankanand111/Mayank_Portfolio/css/custom.css">
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw11 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</h1>
+      
+      <p class="tracked">
+        By <strong>Anand Mayank*, Baroi Amit, Pottier Alex , Hynes Natasha , Davies Kim</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-08-17T10:58:08-04:00">August 17, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="center-image text-justify nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-three-quarters-l"><table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://deepsense.ca/"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/DeepSense.png" alt="Deep convolution neural network used for segmentation task."></a></th>
+<th style="text-align:center"><a href="https://davieslab.wixsite.com/davieslab"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/unb_logo.png" alt="Deep convolution neural network used for segmentation task."></a></th>
+</tr>
+</thead>
+</table>
+<h1 id="abstract">Abstract</h1>
+<hr>
+<p>In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks. In this research, we present an innovative computer vision solution designed to classify shadowgraph images of zooplanktons. Our approach involves an ensemble of convolutional neural networks strategically combined to strike an optimal balance between minimizing False Positives and False Negatives. This concerted fusion has yielded a remarkable inference accuracy of 94.42%. Moreover, we introduce an encoder-decoder Image Segmentation model, enhanced by convolution and deconvolution layers, and this model excels in generating masks that surpass the fidelity of true masks, highlighting its potential for meticulous delineation.</p>
+<h1 id="1-introduction">1. Introduction</h1>
+<hr>
+<h2 id="11-motivation">1.1 Motivation</h2>
+<p>The driving force behind our research originates from the intricate and laborious task of manually identifying zooplankton within shadowgraph images. This process necessitates specialized expertise to discern relevant images, leading to a significant time investment that hinders the progress of concurrent research efforts. Recognizing this predicament as a pivotal concern, we have framed our study to address these challenges and propel the field forward. While considerable research has been conducted in recent times, particularly in lake zooplankton studies such as the work by Sreenath Kyathanahally et al. [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8634433/">1</a>], the challenges are amplified when dealing with sea water from the <a href="https://www.google.com/maps?q=Bay+of+Fundy">Bay of Fundy</a>. This environment presents a unique challenge as a substantial portion of the images do not contain identifiable animals. Consequently, this leads to a highly imbalanced dataset, setting it apart from other studies where datasets are more evenly distributed. Convolutional neural networks, although widely successful in balanced datasets, face challenges in our scenario. To highlight the disparity, consider the barplot below, illustrating the distribution of images containing animals in our training dataset in comparison to other freshwater studies.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/1.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Image on left showing bar plot of our dataset in camparison to an ideal datasaet that is much more balanced Sreenath Kyathanahally et al. [1]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-problem-statement">1.2 Problem Statement</h2>
+<p>The research focuses on addressing the following problem statement: For a given uncropped image, we aim to determine whether the image contains an animal. Furthermore, if an animal is detected, our objective is to pinpoint its exact location within the image. To address this, we first developed a binary classifier to filter and identify relevant images containing animals. Subsequent to classification, we designed a segmentation model to precisely locate the animal within the selected images.</p>
+<h1 id="2-materials-and-methods">2. Materials and Methods</h1>
+<hr>
+<h2 id="21-exploratory-data-analysis-and-early-experiments">2.1 Exploratory Data Analysis and Early Experiments</h2>
+<p>Our dataset, comprising approximately 41,860 images, offers a wealth of information. Among these, 12,794 images have been meticulously annotated by experts from the Biological Sciences Lab at the University of New Brunswick. Out of these annotated images, 1,734 contain animals. Below on the left shows the images we got after clipping from annotations, we made a small animation from a subset of cropped images as shown and to the right we have similar animation with uncropped images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="imagecentered-aligned1"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/cropped.gif"/>
+</figure>
+</th>
+<th style="text-align:center"><figure class="imagecentered-aligned2"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/uncropped.gif"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Image showing cropped images in form of .gif</td>
+<td style="text-align:center">Image showing uncropped images in form of .gif</td>
+</tr>
+</tbody>
+</table>
+<p>The annotations not only identify the presence of animals within the images but also provide precise information about their locations. This information is neatly documented in an accompanying CSV file. It&rsquo;s worth noting that the annotations vary in form, ranging from polygonal outlines to square bounding boxes, as shown in the images below. These variations posed challenges when creating masks for segmentation later on.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/annotation1.png"/>
+</figure>
+</th>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/annotation2.png"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Image showing bounding box around animal.</td>
+<td style="text-align:center">Image showing polygon dots around animal.</td>
+</tr>
+</tbody>
+</table>
+<p>We set out to explore both avenues of deep learning: unsupervised and supervised approaches. We began by employing an unsupervised learning method. We designed two autoencoders to encode two types of images we possessed: uncropped images and cropped images. The latter were generated using annotations from the provided CSV file. Following the encoding process, we applied EM clustering to the resulting latent vectors obtained from encoding these images. Subsequently, we generated t-SNE plots for both experiments. Upon analyzing the clusters, it became apparent that images containing animals displayed a high degree of dispersion, as illustrated in the accompanying t-SNE plots. While we achieved meaningful clusters, the approach faltered for uncropped images due to a significant amount of black pixels present in images from the shadowgraph lens. This led to uninformative latent vectors, resulting in high similarity among most vectors within the vector space.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="autoencodercentered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/autoencoder.png"/>
+</figure>
+</th>
+<th style="text-align:center"><figure class="centered-aligned1"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/clustering1.png"/>
+</figure>
+</th>
+<th style="text-align:center"><figure class="centered-aligned2"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/clustering2.png"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">snapshot shows how image is recontructed using auto encoders.</td>
+<td style="text-align:center">t-SNE plot of clusters obatined after clustering latent vectors of uncropped images with k = 2</td>
+<td style="text-align:center">t-SNE plot of clusters obatined after clustering latent vectors of cropped images with k = 67 (k is total different type of animals in taxonomy csv)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-data-preparation-and-pre-processing">2.2 Data Preparation and Pre-processing</h2>
+<p>Due to the difficulty of establishing a clear decision boundary between images that were of interest to us and those that were not, we decided to employ supervised learning techniques, specifically deep convolutional neural networks. To ensure compatibility with our models, we standardized the size of all images to 256x256. This dimension was chosen through hyperparameter tuning. For the segmentation task, we opted for an image size of 512x512. This choice balanced optimal results with the allocated GPU memory, preventing kernel crashes in our AWS Sagemaker Notebooks. We dindnot applied any transformation for our classification task, but normalized our images with mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]. On the other hand, for the segmentation task, data augmentation proved to be invaluable in refining the precision of our decision boundaries when segmenting the animals. Our augmentation strategy encompassed Random Horizontal Flips, Random Vertical Flips, and Random Rotations with variable angles of up to 20 degrees. Furthermore, we substantially augmented our dataset, generating corresponding true masks to enhance the segmentation process.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Truemask2.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The image above showcases the mask creation using annotations. These masks serve as the ground truth for segmentation tasks.</td>
+</tr>
+</tbody>
+</table>
+<p>For our segmentation task, it was crucial to have a benchmark or ground truth against which our model&rsquo;s predictions could be compared. To establish this, we generated true masks, derived from detailed annotations listed in the &lsquo;annotation.csv&rsquo; file. These annotations catered to all images that prominently featured animals. This mask creation process is not just a simple binary conversion but involves intricate steps to ensure the masks are accurate and are representative of the true distribution and shape of the animals in the images. The image below offers a visual representation, showcasing the meticulous process involved in creating these masks.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Agumented%20Data.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The image above displays the augmented skewed images with true masks, generated to enhance our data augmentation needs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-training-validation-and-test">2.3 Training, Validation, and Test</h2>
+<p>To effectively partition our images, we segregated them into distinct training, validation, and test sets. We further reserved a set of 500 images for exclusive use in the testing phase, keeping them entirely separate from the train and validation sets. The remaining images were divided, with 80% designated for the training set and the remaining 20% allocated to the validation set. For the segmentation task, a similar approach was employed. We allocated 80% of the data for the training set, 10% for validation, and the final 10% for testing purposes. In the results section, we present various confusion matrices pertaining to the classification task, specifically focusing on the set of 500 images that were kept aside for the test set. To evaluate the effectiveness of human annotation, we provided the same set of images to human annotators and obtained confusion matrices by comparing our predictions to the actual annotations.</p>
+<h2 id="24-deep-learning-archictectures">2.4 Deep Learning Archictectures</h2>
+<h3 id="241-binary-classification">2.4.1 Binary Classification</h3>
+<p>For binary classification, we designed a convolutional network composed of three convolutional layers, each paired with a ReLu activation function. Following each convolutional layer, we integrated dropout and max-pooling functionalities, together forming a single convolutional block. Our architecture is structured with three such blocks, as illustrated in the subsequent visualization. After the convolutional operations, the design includes three fully connected layers, culminating with a sigmoid function that predicts the likelihood of an image being assigned to the class labeled &lsquo;1&rsquo;. To bolster the model&rsquo;s precision, we incorporated a learnable threshold. This threshold, tailored to reduce false negatives, undergoes adjustments after every training epoch, relying on performance metrics from the validation set. The fine-tuned threshold plays a pivotal role in classifying the image. For the optimization process, we employed the Binary Cross-Entropy loss, aiming to minimize its resulting value.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/classification.png" alt="Deep convolution neural network used for classification task  "></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The above figure shows three convolution (in blue color) and maxpooling layers (in red color) followed by three layers of FCNN (in green color) culminating into a sigmoid (in yellow color).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="242-segmentation">2.4.2 Segmentation</h3>
+<p>For our segmentation task, we undertook a deliberate analysis and opted to utilize the architecture as presented in the research by Ronneberger et al. <a href="https://arxiv.org/abs/1505.04597">[4]</a> This model has consistently demonstrated superior performance in bioimage segmentation tasks. Given that our images feature distinct, small animals, this U-net architecture was deemed the most appropriate choice.</p>
+<p>The model comprises three primary components:</p>
+<ul>
+<li>Encoder Module : This module contains a series of convolutional layers, complemented by MaxPooling operations. Additionally, we incorporated Batch Normalization and Dropout layers within each convolutional block for improved stability and regularization, respectively.</li>
+<li>Bottleneck Layers: Situated between the Encoder and Decoder, this segment consists of a pair of convolutional and deconvolutional layers.</li>
+<li>Decoder Module: The Decoder embodies a sequence of deconvolutional layers, uniquely paired with skip connections from the Encoder. It&rsquo;s noteworthy to mention that while skip connections are instrumental in our use-case, they aren&rsquo;t typically integrated into standard autoencoder architectures.
+Lastly, the model concludes with an output layer comprised of convolutional layers. The output from this layer is then subjected to a Binary Cross Entropy loss, juxtaposed against the true mask. These true masks are generated from annotations provided in an accompanying CSV file. Below, we showcase several sample masks used during the loss computation.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://drive.google.com/file/d/1br5HOqgcvokhA5H-v4ATcdh2eDWRKj13/view?usp=drive_link"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/segmentation_model.png" alt="Deep convolution neural network used for segmentation task."></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The figure above shows the diagram of the U-net <a href="https://arxiv.org/abs/1505.04597">[4]</a>  model we chose for segmentation. It contains an Encoder and a Decoder. We use Binary CrossEntropy loss to compare the output of this model with the original masks.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Truemask.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The above image illustrates the creation of true masks for training purposes. These masks are subsequently passed to the Binary Cross Entropy loss, along with the predictions, and the output is minimized.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-experiments-and-results">3. Experiments and Results</h1>
+<hr>
+<h2 id="31-binary-classification">3.1 Binary Classification</h2>
+<h3 id="311-preliminary-run-without-hyperparameter-tuning">3.1.1 Preliminary Run without Hyperparameter Tuning</h3>
+<p>In our preliminary run, we employed the ADAM optimizer to minimize the Binary Cross Entropy loss. The learning rate was set to 0.001, and a decay on the learnable parameters was set to 1e-5. This decay acts as an L2 weight decay regularization within our model. We set beta1 to 0.8 and beta2 to 0.999, with an epsilon of 1e-8. Given our dataset&rsquo;s significant class imbalance, we adjusted the loss function to penalize more heavily when the model incorrectly predicted for the minority class (label &lsquo;1&rsquo;). This label signifies the presence of an animal in the image. Based on our dataset&rsquo;s distribution, we determined a penalizing loss ratio: loss_ratio = label_counts[0] / label_counts[1] = [1.0000, 6.3882]. To ensure stability during the initial training phases, we incorporated a learning rate warm-up for the first 100 steps, post which the rate was held constant at 0.001. We trained the model for 30 epochs, and the results, presented in the confusion matrix, are detailed in the following section.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/exp1.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">In above visualization, we got high number of false positves and false negatives with an overall inference accuracy of Accuracy = 85.80% and False negatives are much more concering.</td>
+</tr>
+</tbody>
+</table>
+<p>From our early results, we achieved an accuracy of 85.80%. However, we observed a significant number of false positives and false negatives. The primary concern was the false negatives, as losing images in an already imbalanced dataset could be detrimental. Misclassifying and subsequently omitting images could reduce the limited number of images confirming the presence of animals even further. As a result, our subsequent experiments aimed to explore advanced deep learning techniques that could effectively diminish both type I and type II errors in our predictions.</p>
+<h3 id="312-hyperparameter-tuning-using-hyperparamter-grid">3.1.2 Hyperparameter Tuning using Hyperparamter Grid</h3>
+<p>We undertook hyperparameter tuning leveraging a hyperparameter grid, focusing on the following parameters:</p>
+<ul>
+<li>Models: Through experimentation with various architectures, it was noted that augmenting the depth of our model precipitated overfitting. This in turn affected the model&rsquo;s validation performance adversely.</li>
+<li>Learning Rate: An array of learning rates 0.1, 0.01, 0.001, and 0.0001 were evaluated. The analysis indicated that a learning rate of 0.001 provided the optimal outcome.</li>
+<li>Weight Decay: We assessed multiple weight decay values, including 1e-3, 1e-4, 1e-5, and 1e-7. The optimal performance was observed with a weight decay of 1e-7.</li>
+<li>Dropout: To counteract overfitting, we experimented with varying dropout rates: 0.05, 0.1, 0.2, 0.3, and 0.4. Through these tests, a dropout rate of 0.2 was determined to be the most effective.</li>
+<li>Batch Size: We evaluated the effects of different batch sizes on model performance, specifically sizes of 16, 32, and 64. The batch size of 16 was found to produce the best results.</li>
+</ul>
+<p>In our exploration of contemporary deep learning techniques, we incorporated the RAdam Optimizer<a href="https://arxiv.org/pdf/1908.03265.pdf">[2]</a> as proposed by Liu et al. in their research<a href="https://arxiv.org/pdf/1908.03265.pdf">[2]</a>. This took the place of our initial choice, the Adam optimizer. Further, we implemented the Lookahead Optimizer technique, setting k to 10, alpha to 0.5, and selecting RAdam<a href="https://arxiv.org/pdf/1908.03265.pdf">[2]</a> as the base optimizer, following the methodology outlined by Zhang et al.<a href="https://arxiv.org/pdf/1907.08610.pdf">[3]</a> in their study. The integration of these techniques substantially improved our results, which are detailed in the subsequent sections.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/exp2.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">In the visualization presented above, we observed a significant improvement in inference accuracy, reaching 95.20%. While there was a marked reduction in the number of false positives, the presence of false negatives remained a concern.</td>
+</tr>
+</tbody>
+</table>
+<p>From the results, it&rsquo;s evident that the countless hours dedicated to hyperparameter optimization, coupled with the incorporation of recent advancements in the deep learning domain, have yielded improved outcomes. The model&rsquo;s accuracy surged, achieving a commendable score of 95.20%. While we succeeded in substantially reducing the number of false positives, false negatives continued to pose a significant challenge. Upon analysis, we suspected that the primary reason for this could be the imbalanced nature of our dataset. The model had limited exposure to the minority class, labeled as &lsquo;1&rsquo;, which represents images containing animals. This lack of representation is likely a substantial factor behind our inability to effectively minimize false negatives.</p>
+<h3 id="313-down-sampaling-majority-class">3.1.3 Down-Sampaling Majority Class</h3>
+<p>In light of our observations regarding the model&rsquo;s performance with an imbalanced dataset, we decided to try a different approach. Specifically, we down-sampled our majority class, which carries the label &lsquo;0&rsquo; representing images without animals. By doing so, we aimed to match the count of these images with those of the minority class labeled &lsquo;1&rsquo;, indicating the presence of animals. This adjustment notably reduced the total number of images available for training, subsequently diminishing the overall training steps since the model now had fewer examples to process. Nevertheless, we decided to retain the hyperparameters from our previous experiment, given their demonstrated effectiveness. The results of this experiment are discussed in the sections that follow.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/exp3.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">In the visualization presented above, we observed a significant improvement in reduction of False Negatives, after balancing our dataset but on the cost of models total Accuracy of 75.20%.</td>
+</tr>
+</tbody>
+</table>
+<p>From our findings, it became clear that down-sampling the dataset effectively addressed the issue of false negatives, albeit at the expense of the model&rsquo;s overall accuracy. This drop can be attributed to the fact that down-sampling the majority class left us with significantly fewer examples for training, impacting the model&rsquo;s performance. Additionally, we experimented with up-sampling the minority class by generating new examples of images with animals. This involved applying similar transformations as we did for the segmentation task. However, this strategy didn&rsquo;t yield the anticipated improvements in our results.</p>
+<h3 id="314-the-ensemble-of-models">3.1.4 The Ensemble of Models</h3>
+<p>In our pursuit of finding the ideal balance between minimizing false negatives and false positives, without sacrificing the model&rsquo;s overall accuracy, we devised a novel ensemble approach. This combined the strengths of the models we examined in our earlier experiments. The core idea centered on amalgamating the high accuracy of one model with the diminished false negatives of the other, achieved by taking a weighted average of their predictions. Importantly, determining the exact weighted average emerged as a new hyperparameter challenge. After multiple iterations, we identified an optimal mix that offered a commendable balance between both type I and type II errors, while maintaining the model&rsquo;s high accuracy. This innovative ensemble method underscores the advantages of merging different models in machine learning. By capitalizing on the distinct strengths of each model, we overcame previous challenges, underscoring the principle that collaborative approaches often yield superior results in deep learning experiments.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/exp4.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">From the visualization provided above, we noticed a substantial reduction in false negatives after employing an ensemble of the previous two models, with only a minimal impact on Accuracy (92.60%).</td>
+</tr>
+</tbody>
+</table>
+<p>From the confusion matrix presented, it&rsquo;s evident that the ensemble method is the optimal approach for this problem. By utilizing this method, we significantly reduced false negatives with only a minimal compromise on accuracy. Moreover, these results not only validate but also emphasize our model&rsquo;s robust capability in classifying images. The impressive accuracy levels combined with minimized type II errors underscore the model&rsquo;s reliability and effectiveness. This accomplishment, when seen in the broader perspective, strengthens the case for adopting ensemble methods in similar challenges, reflecting their inherent strength in capitalizing on the best attributes of individual models to produce an enhanced overall result.</p>
+<h2 id="32-segmentation">3.2 Segmentation</h2>
+<p>For our segmentation task, we employed the RAdam Optimizer<a href="https://arxiv.org/pdf/1908.03265.pdf">[2]</a> with a learning rate of 0.001 to optimize the Binary Cross Entropy loss. The model was trained over 100 epochs. As demonstrated in the images below, the masks obtained on the validation set surpassed the quality of the true masks. Notably, our model could detect and segment multiple animals within a single image.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Segresult1.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">This image displays the output masks produced by our model on the validation set. As seen, the quality and precision of the segmentation surpass that of the true masks. Multiple animals within the image are distinctly segmented, highlighting the model&rsquo;s proficiency.</td>
+</tr>
+</tbody>
+</table>
+<p>It&rsquo;s interesting to note that in our annotations, there were a few times when even our human annotators couldn&rsquo;t confidently tell if there were animals in certain images. However, when we looked at the results from our model, it was pretty impressive. The model managed to identify animals in those tricky pictures where even our eyes had doubts as shown in below image with image name in red color.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Segresult2.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Here, we have a challenging image where even our human annotators were on the fence about the presence of animals. Remarkably, our model rose to the challenge, confidently identifying and segmenting potential animals in these areas of ambiguity.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-zoosegnet-combining-both-classification-and-segmentation">3.3 ZooSegNet: Combining both Classification and Segmentation</h2>
+<p>We introduced ZooSegNet, a seamless integration of both classification and segmentation models. The primary objective of this approach was to first discern images that contain animals, and subsequently, to precisely locate these animals within the detected images.</p>
+<h3 id="331-methodology">3.3.1 Methodology</h3>
+<p>Upon receiving the input images, a Python script was employed. This script first classified the images, moving them to either &lsquo;Detected&rsquo; or &lsquo;NotDetected&rsquo; folders based on their content. Following classification, the segmentation model was applied solely to the images in the &lsquo;Detected&rsquo; folder.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="centered-aligned"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Zoosegnet.png"
+         alt="Dataset"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The image above illustrates how we integrated both models into a Python script, with the right side depicting a complete run of the developed script.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="332-qualitative-results">3.3.2 Qualitative Results</h3>
+<ul>
+<li>Single Animal Segmentation: The leftmost image showcases our model&rsquo;s ability to accurately segment a lone animal. The overlaid mask highlights the exact location of the animal in the original image.</li>
+<li>Multiple Animal Segmentation: The next image to the right demonstrates how our model effectively handles scenes with several animals, ensuring each one is clearly segmented without missing any.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/seg1.png"/>
+</figure>
+</th>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Seg2.png"/>
+</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Predicted mask showcasing precise segmentation of the single animal.</td>
+<td style="text-align:center">Predicted mask effectively segmenting multiple animals within the frame.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="333-quantitative-results">3.3.3 Quantitative Results</h3>
+<p>In a deeper exploration of our test set, an intriguing trend emerged. Certain images that misled our classification model did not deceive our segmentation model. Interestingly, the masks produced for these specific images were predominantly black. Further investigation revealed that these images corresponded to the false positives overlooked by our classification model. This finding highlights the efficacy of our ensemble technique, &ldquo;ZooSegNet&rdquo;. By combining both models, the ensemble enhances the network&rsquo;s reliability, bolstering it against potential misclassifications. The effectiveness of ZooSegNet is demonstrated by its impressive performance metrics. Notably, our ensemble outperformed the standalone classification model, boosting accuracy by 2% to achieve an outstanding 94.42% on the inference dataset. Subsequent sections will compare the evaluative measures and illustrate the results using the associated ROC curve, emphasizing the improved performance and reliability of our combined strategy.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Result.gif"/>
+</figure>
+</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">This animated GIF comprises a sequence of nine images, illustrating the areas where our ZooSegNet ensemble demonstrated remarkable precision. Each image presents black masks, emphasizing instances where the classification model misjudged, but the segmentation approach astutely rectified these inaccuracies. These visual results underscore the ensemble&rsquo;s strength in providing a more comprehensive detection framework, successfully pinpointing and adjusting for the classification model&rsquo;s occasional oversights.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><figure class="imagesize"><img src="https://github.com/mayankanand111/Mayank_Portfolio/images/Result2.png"/>
+</figure>
+</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Visual representation of evaluation metrics and ROC curves for three distinct modeling approaches, with an emphasis on the superior results of the ZooSegNet Ensemble.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="4-source-code-and-reproducibility">4. Source Code and Reproducibility</h1>
+<hr>
+<p>Our python script and cource code is availabe on github at following link. (Adding soon Stay Tuned&hellip;)</p>
+<h1 id="5-conclusion">5. Conclusion</h1>
+<hr>
+<p>Exploring the vast depth of ocean data, especially the enigmatic zooplankton, was always a formidable task. It demanded intense dedication, specific knowledge, and considerable time. Nevertheless, this research highlighted the powerful role of deep learning as an ally in this exploration. While our early attempts faced hurdles like false negatives and the issues presented by imbalanced datasets, determination is a foundational principle in science. By continuously innovating, we not only minimized these errors but also created a groundbreaking ensemble technique that combined the advantages of multiple models. This effort yielded an impressive accuracy of 94.42%.</p>
+<p>However, the real success is not just in the statistics. The genuine accomplishment is the practical impact of our work. The once daunting process of categorizing and pinpointing zooplankton in shadowgraph images is now substantially more efficient. Moreover, our system, ZooSegNet, with its dual role in classification and segmentation, demonstrated the potential of combined methods in addressing shortcomings of standalone models. To wrap up, reflecting on our journey underscores that the significance of this research extends beyond its direct outcomes. It highlights the value of tenacity, teamwork, and creativity in the realm of science. The vast and mysterious ocean remains a challenge for many, but with innovations like ours, we edge closer to unveiling its secrets.</p>
+<h1 id="6-references">6. References</h1>
+<hr>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8634433/">[1]</a>S. P. Kyathanahally et al., “Deep Learning Classification of Lake Zooplankton,” Frontiers in Microbiology, vol. 12, Nov. 2021, doi: <a href="https://doi.org/10.3389/fmicb.2021.746297">https://doi.org/10.3389/fmicb.2021.746297</a>.</p>
+<p><a href="https://arxiv.org/pdf/1908.03265.pdf">[2]</a>‌L. Liu et al., “On the Variance of the Adaptive Learning Rate and Beyond,” Iclr.cc, Apr. 2020. <a href="https://iclr.cc/virtual_2020/poster_rkgz2aEKDr.html">https://iclr.cc/virtual_2020/poster_rkgz2aEKDr.html</a> (accessed Aug. 21, 2023).</p>
+<p><a href="https://arxiv.org/pdf/1907.08610.pdf">[3]</a>M. Zhang, J. Lucas, G. Hinton, and J. Ba, “Lookahead Optimizer: k steps forward, 1 step back.” Accessed: Aug. 21, 2023. [Online]. Available: <a href="https://www.cs.toronto.edu/~hinton/absps/lookahead.pdf">https://www.cs.toronto.edu/~hinton/absps/lookahead.pdf</a></p>
+<p><a href="https://arxiv.org/abs/1505.04597">[4]</a>Olaf Ronneberger, P. Fischer, and T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation,” Lecture Notes in Computer Science, pp. 234–241, Jan. 2015, doi: <a href="https://doi.org/10.1007/978-3-319-24574-4_28">https://doi.org/10.1007/978-3-319-24574-4_28</a>.
+‌
+‌
+‌
+‌</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://github.com/mayankanand111/Mayank_Portfolio/" >
+    &copy;  Mayank Anand 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    
+    <a href="https://www.linkedin.com/in/mayank-anand-6580209a/" target="_blank" rel="noopener" class="linkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="linkedIn link" aria-label="follow on linkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="https://github.com/mayankanand111" target="_blank" rel="noopener" class="GitHub ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="mailto:mayank.anand@dal.ca" target="_blank" rel="noopener" class="mayank.anand@dal.ca ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="mayank.anand@dal.ca link" aria-label="follow on mayank.anand@dal.ca——Opens in a new window">
+      
+        mayank.anand@dal.ca
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

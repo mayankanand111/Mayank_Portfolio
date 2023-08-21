@@ -1,0 +1,73 @@
+.text-justify {
+    text-align: justify;
+}
+
+/* Assuming .centered-content is the class for center-aligning the image */
+.centered-aligned {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+}
+.model-aligned {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+}
+.imagesize{
+  image-rendering: optimizeSpeed;
+  display: block;
+  width: auto;
+}
+.autoencodercentered-aligned,
+.centered-aligned1,
+.centered-aligned2{
+  text-align: center;
+  image-rendering: optimizeSpeed;
+  display: block;
+  margin: 20 auto;
+  width: auto;
+}
+.imagecentered-aligned1{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 700px;
+}
+
+.imagecentered-aligned2{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.centered-text {
+  text-align: center;
+  margin-top: 10px; /* Adjust this margin as needed */
+}
+
+figcaption {
+  font-family: sans-serif, sans-serif;  /* Replace with your desired font */
+  font-size: 1.5rem;  /* Change the size as desired */
+  color: #333;  /* You can also change the text color if you want */
+}
+
+/* Custom CSS */
+.collaborating-companies {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+.team-member {
+  font-weight: bold;
+}
+
+.role-affiliation {
+  font-size: 14px;
+  font-style: italic;
+}
