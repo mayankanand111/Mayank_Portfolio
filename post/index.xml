@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Mayank Anand</title>
-    <link>https://example.com/post/</link>
+    <link>https://mayankanand111.github.io/Mayank_Portfolio/post/</link>
     <description>Recent content in Projects on Mayank Anand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</title>
-      <link>https://example.com/post/project-2/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-2/</link>
       <pubDate>Mon, 21 Aug 2023 10:58:08 -0400</pubDate>
       
-      <guid>https://example.com/post/project-2/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-2/</guid>
       <description>Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks.</description>
     </item>
     
     <item>
       <title>Structural Embedding of Constituency Trees in the Attention-based Model for Machine Comprehension</title>
-      <link>https://example.com/post/project-1/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-1/</link>
       <pubDate>Tue, 01 Aug 2023 10:58:08 -0400</pubDate>
       
-      <guid>https://example.com/post/project-1/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-1/</guid>
       <description>Abstract Incorporating hierarchical structures for various Natural Language Processing (NLP) tasks, which involves training the model with syntactic information of constituency trees, has been shown to be very effective. Constituency trees in the simplest form are graph representations of sentences that capture and illustrate syntactic hierarchical structure of a sentence by showing how words are grouped into constituents. However, the majority of research in NLP using Deep Learning to incorporate structural information has been conducted on recurrent models, which are effective but operate sequentially.</description>
     </item>
     
     <item>
       <title>Feature Sleuth: Understanding and expediting learning in Convolution Neural Networks using feature maps</title>
-      <link>https://example.com/post/project-3/</link>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-3/</link>
       <pubDate>Wed, 31 Aug 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://example.com/post/project-3/</guid>
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-3/</guid>
       <description>Abstract Neural networks are heavily used in image processing and classification. However, understanding the internal workings of neural networks has always been a tricky task. One way to look at how a convolutional neural network (CNN) works is by visualizing the feature maps which are obtained after passing a filter through an image. To better understand these feature maps and their purpose in CNN, we experimented with multiple ways of utilizing these in accelerating and enhancing the training of CNNs.</description>
     </item>
     
