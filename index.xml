@@ -6,7 +6,16 @@
     <description>Recent content in Hello World! on Mayank Anand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an Invoice Extraction Bot using pretrained LLMs with the LangChain Framework</title>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-4/</link>
+      <pubDate>Tue, 07 Nov 2023 10:58:08 -0400</pubDate>
+      
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-4/</guid>
+      <description>Click here to see Demo</description>
+    </item>
+    
     <item>
       <title>ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</title>
       <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-2/</link>
@@ -40,7 +49,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/about/</guid>
-      <description>At Big Pocono State Park, pennsylvania, USA My journey began in the backyard of my parent’s house as a curious 12-year-old kid conducting science experiments. This fascination grew when I presented my &amp;lsquo;Laminar Flow&amp;rsquo; project to former President of India Dr. A.P.J. Abdul Kalam Azad. His words to me became engraved in my mind: ‘Kid, science will give you wings to explore the world.’ This passion introduced me to the exciting domain of programming languages during my high school years, but that inquisitive nature to experiment has only grown over time.</description>
+      <description>At Big Pocono State Park, pennsylvania, USA My journey began in the backyard of my parents&amp;rsquo; house as a curious 12-year-old kid conducting science experiments. This fascination grew when I presented my &amp;lsquo;Laminar Flow&amp;rsquo; project to the former President of India, Dr. A.P.J. Abdul Kalam Azad. His words to me became engraved in my mind: &amp;lsquo;Kid, science will give you wings to explore the world.&amp;rsquo; This passion introduced me to the exciting domain of programming languages during my high school years, but that inquisitive nature to experiment has only grown over time.</description>
     </item>
     
     <item>

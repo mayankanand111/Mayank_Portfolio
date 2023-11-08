@@ -6,7 +6,16 @@
     <description>Recent content in Projects on Mayank Anand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Aug 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an Invoice Extraction Bot using pretrained LLMs with the LangChain Framework</title>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-4/</link>
+      <pubDate>Tue, 07 Nov 2023 10:58:08 -0400</pubDate>
+      
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-4/</guid>
+      <description>Click here to see Demo</description>
+    </item>
+    
     <item>
       <title>ZooSegNet: An Ensemble of Zooplankton Classification and Segmentation for Optimal False Positive-False Negative Trade-Off</title>
       <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-2/</link>
