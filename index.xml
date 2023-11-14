@@ -6,7 +6,20 @@
     <description>Recent content in Hello World! on Mayank Anand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Nov 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Nov 2023 10:58:08 -0400</lastBuildDate><atom:link href="https://mayankanand111.github.io/Mayank_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video Chapter Summarizer</title>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-5/</link>
+      <pubDate>Mon, 13 Nov 2023 10:58:08 -0400</pubDate>
+      
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-5/</guid>
+      <description>Click here to see Demo
+Colab Notebook
+Hi all, Thanks for landing to see this demo!
+Objective My goal is to help you extract key moments from a video when you provide captions/transcripts, eliminating the need to watch the entire video. This way, you can effortlessly navigate to the specific key moment you are searching for in your recorded teams’ meetings or university video lectures.
+Contributions: Created dataset from publicly available 78 Lecture videos of Machine Learning — by Dr.</description>
+    </item>
+    
     <item>
       <title>Building an Invoice Extraction Bot using pretrained LLMs with the LangChain Framework</title>
       <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-4/</link>
