@@ -14,7 +14,7 @@
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-5/</guid>
       <description>Click here to see Demo
-Colab Notebook
+Github link
 Hi all, Thanks for landing to see this demo!
 Objective My goal is to help you extract key moments from a video when you provide captions/transcripts, eliminating the need to watch the entire video. This way, you can effortlessly navigate to the specific key moment you are searching for in your recorded teams’ meetings or university video lectures.
 Contributions: Created dataset from publicly available 78 Lecture videos of Machine Learning — by Dr.</description>
@@ -26,16 +26,18 @@ Contributions: Created dataset from publicly available 78 Lecture videos of Mach
       <pubDate>Mon, 21 Aug 2023 10:58:08 -0400</pubDate>
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-2/</guid>
-      <description>Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks.</description>
+      <description>Github Link
+Abstract In the realm of oceanic ecosystems, the vital role of zooplankton in maintaining equilibrium and facilitating essential Earth processes has garnered significant attention. Addressing the intricate challenge of accurately recognizing zooplankton is essential for scientific studies and measurements. However, the manual identification of zooplankton, while indispensable, is hindered by its labour-intensive and time-consuming nature, primarily due to the requirement for specialized expertise. The emergence of deep learning has opened up a transformative avenue for progress, leveraging its impressive performance in various classification and segmentation tasks.</description>
     </item>
     
     <item>
-      <title>Structural Embedding of Constituency Trees in the Attention-based Model for Machine Comprehension</title>
+      <title>QATNet: Structural Embedding of Constituency Trees in the Attention-based Model for Machine Comprehension</title>
       <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-1/</link>
       <pubDate>Tue, 01 Aug 2023 10:58:08 -0400</pubDate>
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-1/</guid>
-      <description>Abstract Incorporating hierarchical structures for various Natural Language Processing (NLP) tasks, which involves training the model with syntactic information of constituency trees, has been shown to be very effective. Constituency trees in the simplest form are graph representations of sentences that capture and illustrate syntactic hierarchical structure of a sentence by showing how words are grouped into constituents. However, the majority of research in NLP using Deep Learning to incorporate structural information has been conducted on recurrent models, which are effective but operate sequentially.</description>
+      <description>Github link
+Abstract Incorporating hierarchical structures for various Natural Language Processing (NLP) tasks, which involves training the model with syntactic information of constituency trees, has been shown to be very effective. Constituency trees in the simplest form are graph representations of sentences that capture and illustrate syntactic hierarchical structure of a sentence by showing how words are grouped into constituents. However, the majority of research in NLP using Deep Learning to incorporate structural information has been conducted on recurrent models, which are effective but operate sequentially.</description>
     </item>
     
     <item>
@@ -44,7 +46,18 @@ Contributions: Created dataset from publicly available 78 Lecture videos of Mach
       <pubDate>Wed, 31 Aug 2022 10:58:08 -0400</pubDate>
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-3/</guid>
-      <description>Abstract Neural networks are heavily used in image processing and classification. However, understanding the internal workings of neural networks has always been a tricky task. One way to look at how a convolutional neural network (CNN) works is by visualizing the feature maps which are obtained after passing a filter through an image. To better understand these feature maps and their purpose in CNN, we experimented with multiple ways of utilizing these in accelerating and enhancing the training of CNNs.</description>
+      <description>Github link
+Abstract Neural networks are heavily used in image processing and classification. However, understanding the internal workings of neural networks has always been a tricky task. One way to look at how a convolutional neural network (CNN) works is by visualizing the feature maps which are obtained after passing a filter through an image. To better understand these feature maps and their purpose in CNN, we experimented with multiple ways of utilizing these in accelerating and enhancing the training of CNNs.</description>
+    </item>
+    
+    <item>
+      <title>Stock Price Prediction using Sentiment Analyses of Tweets</title>
+      <link>https://mayankanand111.github.io/Mayank_Portfolio/post/project-6/</link>
+      <pubDate>Sat, 25 Dec 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://mayankanand111.github.io/Mayank_Portfolio/post/project-6/</guid>
+      <description>Github Link
+Abstract The analysis of the stock market has been very profound among the machine learning community. It is well known that is it not very easy to predict the future stock price of a company. There are a variety of intrinsic and extrinsic factors that might influence the market. Many predictive approaches ranging from statistical models to advanced deep learning models have been developed. Most people use historical price data and other technical measures to analyze the stock movement.</description>
     </item>
     
     <item>
@@ -53,7 +66,7 @@ Contributions: Created dataset from publicly available 78 Lecture videos of Mach
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mayankanand111.github.io/Mayank_Portfolio/about/</guid>
-      <description>At Big Pocono State Park, pennsylvania, USA My journey began in the backyard of my parents&amp;rsquo; house as a curious 12-year-old kid conducting science experiments. This fascination grew when I presented my &amp;lsquo;Laminar Flow&amp;rsquo; project to the former President of India, Dr. A.P.J. Abdul Kalam Azad. His words to me became engraved in my mind: &amp;lsquo;Kid, science will give you wings to explore the world.&amp;rsquo; This passion introduced me to the exciting domain of programming languages during my high school years, but that inquisitive nature to experiment has only grown over time.</description>
+      <description>At Goldberg Computer Science Building, Dalhousie University during my graduation ceremony, Canada My journey began in the backyard of my parents&amp;rsquo; house as a curious 12-year-old kid conducting science experiments. This fascination grew when I presented my &amp;lsquo;Laminar Flow&amp;rsquo; project to the former President of India, Dr. A.P.J. Abdul Kalam Azad. His words to me became engraved in my mind: &amp;lsquo;Kid, science will give you wings to explore the world.</description>
     </item>
     
     <item>
